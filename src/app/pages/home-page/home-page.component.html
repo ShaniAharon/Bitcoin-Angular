@@ -1,3 +1,6 @@
 <section class="home-page">
-    <h1>Home page</h1>
+  <h1>Hello {{ user.name }}!</h1>
+  <h3>Coins: {{ user.coins }}</h3>
+  <h3>BTC: {{ user.coins | currency }}</h3>
+  <pre>{{ user | json }}</pre>
 </section>
