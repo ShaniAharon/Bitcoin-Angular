@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { ContactListComponent } from './cmps/contact-list/contact-list.component';
 import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.component';
 import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
-import { BitcoinAppComponent } from './pages/bitcoin-app/bitcoin-app.component';
+import { ContactPageComponent } from './pages/contact-page/contact-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BitcoinAppComponent } from './pages/bitcoin-app/bitcoin-app.component';
     ContactListComponent,
     ContactPreviewComponent,
     ContactFilterComponent,
-    BitcoinAppComponent
+    ContactPageComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
