@@ -11,6 +11,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
 import { FormsModule } from '@angular/forms';
+import { StatisticPageComponent } from './pages/statistic-page/statistic-page.component';
+import { ChartComponent } from './cmps/chart/chart.component';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -21,13 +25,17 @@ import { FormsModule } from '@angular/forms';
     ContactFilterComponent,
     ContactPageComponent,
     HomePageComponent,
-    ContactDetailsComponent
+    ContactDetailsComponent,
+    StatisticPageComponent,
+    ChartComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

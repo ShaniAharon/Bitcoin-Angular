@@ -15,4 +15,7 @@ export class AppComponent {
   toHome(){
     this.currPage = 'home'
   }
+  toStatisticPage(){
+    this.currPage = 'stats'
+  }
 }
