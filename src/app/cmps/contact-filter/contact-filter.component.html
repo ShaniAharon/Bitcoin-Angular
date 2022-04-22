@@ -1,1 +1,9 @@
-<p>contact-filter works!</p>
+<section class="contact-filter">
+  <input
+    [(ngModel)]="filterBy.term"
+    (ngModelChange)="onSetFilter()"
+    name="term"
+    type="text"
+    placeholder="Search a contact"
+  />
+</section>

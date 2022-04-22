@@ -5,6 +5,7 @@
     [contactId]="selectedContactId"
   ></contact-details>
   <ng-template #contactList>
+    <contact-filter></contact-filter>
     <contact-list
       (onSelect)="selectedContactId = $event"
       [contacts]="contacts$ | async"

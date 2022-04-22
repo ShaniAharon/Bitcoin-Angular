@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { of } from 'rxjs'
+import { ContactFilter } from '../models/contact.filter';
 import { Contact } from '../models/contact.model';
 
 const CONTACTS = [
@@ -132,11 +133,16 @@ export class ContactService {
   private _contacts$ = new BehaviorSubject<Contact[]>([])
   public contacts$ = this._contacts$.asObservable()
 
+  //filter
+  private _filterBy$ = new BehaviorSubject<ContactFilter>({term: ''})
+  public filterBy$ = this._filterBy$.asObservable()
+
   constructor() {
   }
 
 
   public loadContacts(filterBy = null): void {
+    //  filterBy = this._filterBy$.getValue()
     let contacts = this._contactsDb;
     if (filterBy && filterBy.term) {
       contacts = this._filter(contacts, filterBy.term)
@@ -191,6 +197,11 @@ export class ContactService {
 
       return 0;
     })
+  }
+
+  setFilter(filterBy) {
+    // this._filterBy$.next(filterBy) // check if need it , its workin without it
+    this.loadContacts(filterBy)//test
   }
 
   private _filter(contacts, term) {
