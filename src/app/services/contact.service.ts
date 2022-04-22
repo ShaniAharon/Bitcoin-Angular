@@ -145,12 +145,12 @@ export class ContactService {
   }
 
 
-  public getContactById(id: string): Observable<Contact>| string {
+  public getContactById(id: string): Observable<Contact> {
     //mock the server work
     const contact = this._contactsDb.find(contact => contact._id === id)
 
     //return an observable
-    return contact ? of(contact) : `Contact id ${id} not found!`//Observable.throw(`Contact id ${id} not found!`)
+    return of(contact) //: Promise.resolve(null)//Observable.throw(`Contact id ${id} not found!`)
   }
 
   public deleteContact(id: string) {

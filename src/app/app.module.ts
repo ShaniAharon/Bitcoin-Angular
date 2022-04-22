@@ -9,6 +9,7 @@ import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.com
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ContactDetailsComponent } from './pages/contact-details/contact-details.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     ContactPreviewComponent,
     ContactFilterComponent,
     ContactPageComponent,
-    HomePageComponent
+    HomePageComponent,
+    ContactDetailsComponent
   ],
   imports: [
     BrowserModule,

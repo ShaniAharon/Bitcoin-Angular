@@ -2,5 +2,6 @@
   <contact-preview
     *ngFor="let contact of contacts"
     [contact]="contact"
+    (onSelect)="onSelect.emit($event)"
   ></contact-preview>
 </section>

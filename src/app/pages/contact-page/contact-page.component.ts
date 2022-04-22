@@ -12,6 +12,7 @@ export class ContactPageComponent implements OnInit {
  
 
   contacts$: Observable<Contact[]>
+  selectedContactId: string
 
 
 
