@@ -34,6 +34,7 @@ export class ChartComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     //console.log('type', !!this.bitcoinService.getTradeVolume().subscribe); // check if we got observable
     if(!this.bitcoinService.getTradeVolume().subscribe) this.trades = this.bitcoinService.getTradeVolume()
+    //must do subscribe to get the data
     else this.bitcoinService.getTradeVolume().subscribe(data => {
       // console.log('data', data);
       this.trades = data
