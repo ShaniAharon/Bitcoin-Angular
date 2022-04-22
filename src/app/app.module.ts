@@ -8,6 +8,8 @@ import { ContactPreviewComponent } from './cmps/contact-preview/contact-preview.
 import { ContactFilterComponent } from './cmps/contact-filter/contact-filter.component';
 import { ContactPageComponent } from './pages/contact-page/contact-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
