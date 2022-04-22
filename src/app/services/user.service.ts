@@ -7,7 +7,7 @@ import { User } from "../models/user.model";
 export class UserService {
     getUser() : User {
         return {
-            name:"Ochoa Hyda",
+            name:"Satoshi Nakamoto",
             coins: 100,
             moves: []
         }

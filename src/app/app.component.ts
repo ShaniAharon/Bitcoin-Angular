@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'mister-bitcoin-try';
+  currPage: string = 'home'
+
+  toContacts(){
+    this.currPage = 'contacts'
+  }
+  toHome(){
+    this.currPage = 'home'
+  }
 }

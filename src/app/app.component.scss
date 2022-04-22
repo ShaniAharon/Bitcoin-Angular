@@ -10,6 +10,13 @@
     align-items: center;
     background-color: #4caf;
     margin-bottom: 30px;
+    justify-content: space-between;
+    .links {
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+      margin-right: 20px;
+    }
   }
 
   main {
