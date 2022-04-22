@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { BitcoinService } from 'src/app/services/bitcoin.service.service';
 
 @Component({
@@ -29,15 +30,22 @@ export class ChartComponent implements OnInit {
   ];
 
   trades: [] = null
+  subscription: Subscription
+
   constructor(private bitcoinService: BitcoinService){}
+
   async ngOnInit(): Promise<void> {
     //console.log('type', !!this.bitcoinService.getTradeVolume().subscribe); // check if we got observable
     if(!this.bitcoinService.getTradeVolume().subscribe) this.trades = this.bitcoinService.getTradeVolume()
-    //must do subscribe to get the data
-    else this.bitcoinService.getTradeVolume().subscribe(data => {
+    //must do subscribe to get the data , save in subscription can do unsubscribe in destroy
+    else this.subscription = this.bitcoinService.getTradeVolume().subscribe(data => {
       // console.log('data', data);
       this.trades = data
     })
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()
   }
 }
 
